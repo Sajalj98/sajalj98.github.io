@@ -3,22 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sajal Jain Portfolio</title>
+  <title>Sajal Jain | Portfolio</title>
   <style>
-    body { font-family: Arial; text-align: center; padding: 2rem; background: #f4f4f4; }
-    h1 { color: #333; }
-    a { color: #007acc; text-decoration: none; }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    .project {
+      margin-bottom: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eee;
+      color: #555;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <h1>Hi, I'm Sajal Jain 👋</h1>
-  <p>Data Scientist | ML Engineer | Generative AI Specialist</p>
-  <p><a href="https://www.linkedin.com/in/sajaljain">LinkedIn</a> | <a href="https://github.com/sajaljain">GitHub</a></p>
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>HealthOne.ai:</strong> Predictive healthcare platform using Med2Vec, embeddings</li>
-    <li><strong>Document QnA Chatbot:</strong> LLM + RAG using OpenSearch + AWS Lambda</li>
-    <li><strong>VRAM Email Gen:</strong> Prompt-engineered email generation using NLP</li>
-  </ul>
+
+  <header>
+    <h1>Sajal Jain</h1>
+    <p>Data Scientist | Generative AI Engineer | ML Systems Architect</p>
+    <nav>
+      <a href="https://github.com/sajaljain" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/sajaljain" target="_blank">LinkedIn</a>
+      <a href="mailto:sajal@example.com">Email</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      I'm a Data Scientist with 3+ years of experience in building scalable ML and GenAI systems across finance and healthcare.
+      Skilled in LLMs, RAG pipelines, NLP, and predictive modeling.
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>HealthOne.ai</h3>
+      <p>Predictive healthcare platform with disease propensity models using Med2Vec embeddings and multi-tenant architecture.</p>
+    </div>
+
+    <div class="project">
+      <h3>Document Q&A Chatbot</h3>
+      <p>LLM-powered RAG chatbot using OpenSearch, AWS Lambda, and VLLM with real-time streaming capabilities.</p>
+    </div>
+
+    <div class="project">
+      <h3>VRAM Email Generator</h3>
+      <p>Automated VRAM email generation with NLP-driven prompt engineering, increasing client engagement by 25%.</p>
+    </div>
+
+    <div class="project">
+      <h3>Provider Search using RAG</h3>
+      <p>Built a provider search system using OpenSearch and GenAI with condition/anatomy/insurance-based intent templates.</p>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2025 Sajal Jain · Portfolio
+  </footer>
+
 </body>
 </html>
