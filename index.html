@@ -1,149 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sajal Jain | Data Scientist & GenAI Engineer</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background-color: #f5f5f5;
-      color: #222;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #007acc;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-      background-color: white;
-    }
-    h2 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    .job, .project {
-      margin-bottom: 1.5rem;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #eee;
-      color: #666;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajal Jain - Lead Data Scientist</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a2e 50%, #16213e 100%);
+            color: var(--text-light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Animated background particles */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideInUp 1s ease-out;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            animation: slideInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            animation: slideInUp 1s ease-out 0.4s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: slideInUp 1s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-left: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            border: 3px solid var(--dark-bg);
+        }
+
+        .job-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-info {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content h2 {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                margin-left: 1rem;
+            }
+
+            .timeline-item::before {
+                left: -2rem;
+            }
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="particle" style="left: 10%; top: 20%; width: 4px; height: 4px; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; top: 80%; width: 6px; height: 6px; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 60%; top: 30%; width: 8px; height: 8px; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 80%; top: 70%; width: 5px; height: 5px; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 90%; top: 10%; width: 7px; height: 7px; animation-delay: 3s;"></div>
+    </div>
 
-  <header>
-    <h1>Sajal Jain</h1>
-    <p>Lead Data Scientist | GenAI Engineer | ML Architect</p>
+    <!-- Navigation -->
     <nav>
-      <a href="https://github.com/sajaljain" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/sajalj4598/" target="_blank">LinkedIn</a>
-      <a href="mailto:sajalj4598@gmail.com">Email</a>
+        <div class="nav-container">
+            <div class="logo">Sajal Jain</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I'm a Data Scientist with 3+ years of experience building scalable ML and Generative AI systems across healthcare and finance. I specialize in Retrieval-Augmented Generation (RAG), LLM orchestration, and production-ready AI workflows.
-    </p>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Sajal Jain</h1>
+            <h2>Lead Data Scientist & AI Engineer</h2>
+            <p>Transforming data into intelligent solutions with cutting-edge AI, ML, and GenAI technologies. Specialized in RAG systems, LLMs, and scalable MLOps platforms.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#experience" class="btn btn-secondary">View Experience</a>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Key Skills</h2>
-    <ul>
-      <li><strong>GenAI:</strong> LLMs, RAG, Transformers, AI Agents (LLaMA, GPT, Mistral)</li>
-      <li><strong>ML & NLP:</strong> Deep Learning, Prompt Engineering, A/B Testing, Optimization</li>
-      <li><strong>Frameworks:</strong> TensorFlow, PyTorch, LangChain, LlamaIndex, Hugging Face</li>
-      <li><strong>Cloud & Deployment:</strong> AWS (OpenSearch, Lambda, Bedrock, S3), Docker, Flask, CI/CD</li>
-      <li><strong>Data & MLOps:</strong> MongoDB, PostgreSQL, ChromaDB, FAISS, Weaviate, Git</li>
-    </ul>
-  </section>
+    <!-- Skills Section -->
+    <section id="skills" class="reveal">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fas fa-robot"></i> Generative AI & LLMs</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">LLMs</span>
+                    <span class="skill-tag">RAG</span>
+                    <span class="skill-tag">Transformers</span>
+                    <span class="skill-tag">AI Agents</span>
+                    <span class="skill-tag">LLaMA</span>
+                    <span class="skill-tag">GPT</span>
+                    <span class="skill-tag">Mistral</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-code"></i> Programming & Frameworks</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">LlamaIndex</span>
+                    <span class="skill-tag">Hugging Face</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Websocket</span>
+                    <span class="skill-tag">OpenSearch</span>
+                    <span class="skill-tag">Lambda</span>
+                    <span class="skill-tag">Bedrock</span>
+                    <span class="skill-tag">S3</span>
+                    <span class="skill-tag">Docker</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fas fa-database"></i> Data & ML</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">NLP</span>
+                    <span class="skill-tag">Deep Learning</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">ChromaDB</span>
+                    <span class="skill-tag">FAISS</span>
+                    <span class="skill-tag">Weaviate</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Highlighted Projects</h2>
+    <!-- Experience Section -->
+    <section id="experience" class="reveal">
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="job-title">Lead Data Scientist</div>
+                <div class="company-info">UST, Pune • Feb 2024 – Present</div>
+                <ul class="achievements">
+                    <li>Developed provider search feature using RAG on AWS for 1M+ records, improving retrieval accuracy by 30%</li>
+                    <li>Built AI-driven summarizer using recursive summarization, reducing manual analysis time by 40%</li>
+                    <li>Created Multi-Document Q&A chatbot with LangChain, improving efficiency by 2x through parallel processing</li>
+                </ul>
+            </div>
 
-    <div class="project">
-      <h3>Provider Search with RAG</h3>
-      <p>Built a provider search platform using OpenSearch, hybrid vector + metadata search, and GenAI-based reranking. Improved retrieval accuracy by 30%.</p>
-    </div>
+            <div class="timeline-item">
+                <div class="job-title">Data Scientist 2</div>
+                <div class="company-info">UST, Pune • July 2023 – Jan 2024</div>
+                <ul class="achievements">
+                    <li>Generated marketing content using prompt engineering, increasing engagement (CTR) by 20%</li>
+                    <li>Applied advanced RAG techniques to process 500+ PDF documents, improving retrieval accuracy by 30%</li>
+                    <li>Implemented real-time streaming with Multi-GPU architecture, cutting response latency by 40%</li>
+                    <li>Optimized data pipelines using AI tools and multi-agent systems, improving accuracy by 25%</li>
+                </ul>
+            </div>
 
-    <div class="project">
-      <h3>Document Q&A Chatbot</h3>
-      <p>Developed a chatbot with LangChain, Flask, and MongoDB for querying EOC/EOB documents. Added parallel processing & async support using VLLM and S3 integration.</p>
-    </div>
+            <div class="timeline-item">
+                <div class="job-title">Data Scientist</div>
+                <div class="company-info">UST Abzooba, Pune • June 2021 – June 2023</div>
+                <ul class="achievements">
+                    <li>Developed predictive models for disease propensity using APCD Colorado dataset (1B+ records)</li>
+                    <li>Enhanced HealthOne.ai MLOps platform, improving data processing efficiency by 3x</li>
+                    <li>Implemented multi-tenancy, reducing AI solution time-to-market by 50%</li>
+                    <li>Engineered reusable components, increasing model accuracy by 25% and reducing processing time by 40%</li>
+                </ul>
+            </div>
 
-    <div class="project">
-      <h3>VRAM Email Generator</h3>
-      <p>Generated marketing emails and sitelinks from Economic Outlook PDFs using prompt engineering. Improved engagement by 20%.</p>
-    </div>
+            <div class="timeline-item">
+                <div class="job-title">Project Intern</div>
+                <div class="company-info">HungreeBee LLP, Pune • Dec 2020 – June 2021</div>
+                <ul class="achievements">
+                    <li>Developed Farmer's Market app using Flutter and Firebase, tested by 20+ farmers</li>
+                    <li>Analyzed 70 years of agricultural data across 10+ crops for trend insights</li>
+                    <li>Co-authored research paper on predictive analytics, published by Springer at ICSAC 2021</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <div class="project">
-      <h3>HealthOne.ai</h3>
-      <p>Developed disease propensity and risk models on 1B+ APCD records. Enhanced data processing and multi-tenant architecture for healthcare clients.</p>
-    </div>
+    <!-- Education Section -->
+    <section id="education" class="reveal">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline-item" style="margin-left: 0;">
+            <div class="job-title">B.Tech in Computer Science</div>
+            <div class="company-info">MIT Pune, India • CGPA: 9.35/10</div>
+            <p style="margin-top: 1rem;">Graduated with distinction, demonstrating strong academic performance and technical excellence in computer science fundamentals.</p>
+        </div>
+    </section>
 
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="reveal">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <a href="mailto:sajalj4598@gmail.com">sajalj4598@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <a href="tel:+917999123588">+91 7999123588</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <h3>LinkedIn</h3>
+                <a href="https://linkedin.com/in/sajal-jain" target="_blank">Connect with me</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <h3>GitHub</h3>
+                <a href="https://github.com/sajalj4598" target="_blank">View my code</a>
+            </div>
+        </div>
+    </section>
 
-  <section>
-    <h2>Experience</h2>
+    <script>
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
 
-    <div class="job">
-      <h3>Lead Data Scientist – UST (2024–Present)</h3>
-      <ul>
-        <li>Provider search using RAG, query expansion, spell correction, and reranking (30% gain in retrieval accuracy).</li>
-        <li>Summarizer for webinar transcripts using recursive summarization and feedback extraction (40% time reduction).</li>
-        <li>Multi-Document Q&A chatbot using Flask, MongoDB, and S3 with async/parallel processing.</li>
-      </ul>
-    </div>
+        window.addEventListener('scroll', reveal);
+        reveal(); // Check on page load
 
-    <div class="job">
-      <h3>Data Scientist II – UST (2023–2024)</h3>
-      <ul>
-        <li>Generated VRAM emails with prompt engineering, improving CTR by 20%.</li>
-        <li>Processed 500+ PDFs using RAG for EOC/EOB claims, enhancing retrieval by 30%.</li>
-        <li>Deployed VLLM with Multi-GPU architecture for real-time streaming and low latency GenAI responses.</li>
-      </ul>
-    </div>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    <div class="job">
-      <h3>Data Scientist – UST Abzooba (2021–2023)</h3>
-      <ul>
-        <li>Built predictive models for healthcare (disease risk, social isolation) on 1B+ records.</li>
-        <li>Improved HealthOne.ai processing by 3x, implemented multi-tenancy & component marketplace.</li>
-        <li>Developed reusable components for outlier detection, token normalization, and balancing.</li>
-      </ul>
-    </div>
+        // Dynamic particle generation
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.width = (Math.random() * 8 + 2) + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            
+            document.querySelector('.bg-animation').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
 
-  </section>
+        // Create particles periodically
+        setInterval(createParticle, 3000);
 
-  <section>
-    <h2>Education</h2>
-    <p><strong>B.Tech in Computer Science</strong> – MIT Pune, CGPA: 9.35/10</p>
-  </section>
-
-  <footer>
-    &copy; 2025 Sajal Jain · Built with ❤️ using GitHub Pages
-  </footer>
-
+        // Add navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+            } else {
+                nav.style.background = 'rgba(10, 10, 10, 0.9)';
+            }
+        });
+    </script>
 </body>
 </html>
