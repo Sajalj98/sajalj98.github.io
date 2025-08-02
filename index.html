@@ -3,51 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sajal Jain | Portfolio</title>
+  <title>Sajal Jain | Data Scientist & GenAI Engineer</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f5f5f5;
+      color: #222;
       line-height: 1.6;
     }
     header {
       background-color: #007acc;
       color: white;
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
     }
-    h1 {
-      margin-bottom: 0.5rem;
-    }
     nav a {
-      margin: 0 1rem;
       color: white;
+      margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
     }
     section {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      margin: auto;
+      padding: 2rem 1rem;
+      background-color: white;
     }
-    ul {
-      padding-left: 1.2rem;
+    h2 {
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
-    .project {
+    .job, .project {
       margin-bottom: 1.5rem;
     }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem;
       background: #eee;
-      color: #555;
-      font-size: 0.9rem;
+      color: #666;
+    }
+    ul {
+      padding-left: 1.2rem;
     }
   </style>
 </head>
@@ -55,49 +53,96 @@
 
   <header>
     <h1>Sajal Jain</h1>
-    <p>Data Scientist | Generative AI Engineer | ML Systems Architect</p>
+    <p>Lead Data Scientist | GenAI Engineer | ML Architect</p>
     <nav>
       <a href="https://github.com/sajaljain" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/sajaljain" target="_blank">LinkedIn</a>
-      <a href="mailto:sajal@example.com">Email</a>
+      <a href="https://www.linkedin.com/in/sajalj4598/" target="_blank">LinkedIn</a>
+      <a href="mailto:sajalj4598@gmail.com">Email</a>
     </nav>
   </header>
 
   <section>
     <h2>About Me</h2>
     <p>
-      I'm a Data Scientist with 3+ years of experience in building scalable ML and GenAI systems across finance and healthcare.
-      Skilled in LLMs, RAG pipelines, NLP, and predictive modeling.
+      I'm a Data Scientist with 3+ years of experience building scalable ML and Generative AI systems across healthcare and finance. I specialize in Retrieval-Augmented Generation (RAG), LLM orchestration, and production-ready AI workflows.
     </p>
   </section>
 
   <section>
-    <h2>Projects</h2>
+    <h2>Key Skills</h2>
+    <ul>
+      <li><strong>GenAI:</strong> LLMs, RAG, Transformers, AI Agents (LLaMA, GPT, Mistral)</li>
+      <li><strong>ML & NLP:</strong> Deep Learning, Prompt Engineering, A/B Testing, Optimization</li>
+      <li><strong>Frameworks:</strong> TensorFlow, PyTorch, LangChain, LlamaIndex, Hugging Face</li>
+      <li><strong>Cloud & Deployment:</strong> AWS (OpenSearch, Lambda, Bedrock, S3), Docker, Flask, CI/CD</li>
+      <li><strong>Data & MLOps:</strong> MongoDB, PostgreSQL, ChromaDB, FAISS, Weaviate, Git</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Highlighted Projects</h2>
 
     <div class="project">
-      <h3>HealthOne.ai</h3>
-      <p>Predictive healthcare platform with disease propensity models using Med2Vec embeddings and multi-tenant architecture.</p>
+      <h3>Provider Search with RAG</h3>
+      <p>Built a provider search platform using OpenSearch, hybrid vector + metadata search, and GenAI-based reranking. Improved retrieval accuracy by 30%.</p>
     </div>
 
     <div class="project">
       <h3>Document Q&A Chatbot</h3>
-      <p>LLM-powered RAG chatbot using OpenSearch, AWS Lambda, and VLLM with real-time streaming capabilities.</p>
+      <p>Developed a chatbot with LangChain, Flask, and MongoDB for querying EOC/EOB documents. Added parallel processing & async support using VLLM and S3 integration.</p>
     </div>
 
     <div class="project">
       <h3>VRAM Email Generator</h3>
-      <p>Automated VRAM email generation with NLP-driven prompt engineering, increasing client engagement by 25%.</p>
+      <p>Generated marketing emails and sitelinks from Economic Outlook PDFs using prompt engineering. Improved engagement by 20%.</p>
     </div>
 
     <div class="project">
-      <h3>Provider Search using RAG</h3>
-      <p>Built a provider search system using OpenSearch and GenAI with condition/anatomy/insurance-based intent templates.</p>
+      <h3>HealthOne.ai</h3>
+      <p>Developed disease propensity and risk models on 1B+ APCD records. Enhanced data processing and multi-tenant architecture for healthcare clients.</p>
     </div>
 
   </section>
 
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <h3>Lead Data Scientist – UST (2024–Present)</h3>
+      <ul>
+        <li>Provider search using RAG, query expansion, spell correction, and reranking (30% gain in retrieval accuracy).</li>
+        <li>Summarizer for webinar transcripts using recursive summarization and feedback extraction (40% time reduction).</li>
+        <li>Multi-Document Q&A chatbot using Flask, MongoDB, and S3 with async/parallel processing.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Data Scientist II – UST (2023–2024)</h3>
+      <ul>
+        <li>Generated VRAM emails with prompt engineering, improving CTR by 20%.</li>
+        <li>Processed 500+ PDFs using RAG for EOC/EOB claims, enhancing retrieval by 30%.</li>
+        <li>Deployed VLLM with Multi-GPU architecture for real-time streaming and low latency GenAI responses.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Data Scientist – UST Abzooba (2021–2023)</h3>
+      <ul>
+        <li>Built predictive models for healthcare (disease risk, social isolation) on 1B+ records.</li>
+        <li>Improved HealthOne.ai processing by 3x, implemented multi-tenancy & component marketplace.</li>
+        <li>Developed reusable components for outlier detection, token normalization, and balancing.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <p><strong>B.Tech in Computer Science</strong> – MIT Pune, CGPA: 9.35/10</p>
+  </section>
+
   <footer>
-    &copy; 2025 Sajal Jain · Portfolio
+    &copy; 2025 Sajal Jain · Built with ❤️ using GitHub Pages
   </footer>
 
 </body>
