@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sajal Jain - Lead Data Scientist</title>
+    <title>Hi, I'm Sajal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -13,46 +14,25 @@
         }
 
         :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #f093fb;
-            --dark-bg: #0a0a0a;
-            --card-bg: rgba(255, 255, 255, 0.1);
-            --text-light: #ffffff;
-            --text-muted: #b0b0b0;
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --primary-bg: #0A1929;
+            --secondary-bg: #1E3A8A;
+            --card-bg: rgba(30, 58, 138, 0.3);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --text-primary: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --accent-blue: #3B82F6;
+            --bright-blue: #60A5FA;
+            --border-color: rgba(30, 64, 175, 0.3);
+            --hover-bg: rgba(59, 130, 246, 0.1);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1a2e 50%, #16213e 100%);
-            color: var(--text-light);
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
             scroll-behavior: smooth;
-        }
-
-        /* Animated background particles */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         /* Navigation */
@@ -60,29 +40,26 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1rem 2rem;
-            background: rgba(10, 10, 10, 0.9);
+            padding: 1rem 0;
+            background: rgba(10, 25, 41, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
-            transition: all 0.3s ease;
         }
 
         .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--text-primary);
         }
 
         .nav-links {
@@ -92,120 +69,169 @@
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--text-secondary);
             text-decoration: none;
-            transition: all 0.3s ease;
-            position: relative;
+            font-weight: 400;
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-2px);
+            color: var(--accent-blue);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         /* Hero Section */
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 8rem 0 4rem;
             text-align: center;
-            position: relative;
-            padding: 0 2rem;
         }
 
-        .hero-content h1 {
-            font-size: 4rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideInUp 1s ease-out;
+            color: var(--text-primary);
         }
 
-        .hero-content h2 {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            animation: slideInUp 1s ease-out 0.2s both;
+        .hero-emojis {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5rem;
         }
 
-        .hero-content p {
+        .hero-subtitle {
             font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-            animation: slideInUp 1s ease-out 0.4s both;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: slideInUp 1s ease-out 0.6s both;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        .cta-button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: var(--accent-blue);
             color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-blue);
         }
 
-        .btn-secondary {
+        .cta-button:hover {
             background: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            color: var(--accent-blue);
+            transform: translateY(-2px);
         }
 
         /* Section Styles */
         section {
-            padding: 80px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 4rem 0;
         }
 
         .section-title {
-            text-align: center;
             font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
             margin-bottom: 3rem;
-            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .about-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 0;
+        }
+
+        .timeline-section {
+            margin-bottom: 3rem;
+        }
+
+        .timeline-section h3 {
+            font-size: 1.5rem;
+            color: var(--bright-blue);
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .timeline-items {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            background: var(--hover-bg);
+            transform: translateY(-2px);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            color: var(--bright-blue);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .duration {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item .description {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Skills Section */
@@ -213,115 +239,116 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .skill-category {
-            background: var(--card-bg);
+            background: var(--glass-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 2rem;
             transition: all 0.3s ease;
         }
 
         .skill-category:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            background: var(--hover-bg);
+            transform: translateY(-2px);
         }
 
         .skill-category h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
             font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: rgba(102, 126, 234, 0.2);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
+        .skill-experience {
+            color: var(--text-muted);
             font-size: 0.9rem;
-            border: 1px solid rgba(102, 126, 234, 0.3);
+            margin-bottom: 1.5rem;
         }
 
-        /* Experience Section */
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
+        .skill-items {
+            display: grid;
+            gap: 1rem;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            background: var(--card-bg);
+        .skill-name {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .skill-level {
+            color: var(--bright-blue);
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .research-item {
+            background: var(--glass-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 2rem;
-            margin-left: 2rem;
             transition: all 0.3s ease;
         }
 
-        .timeline-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        .research-item:hover {
+            background: var(--hover-bg);
+            transform: translateY(-2px);
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3rem;
-            top: 2rem;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-color);
-            border-radius: 50%;
-            border: 3px solid var(--dark-bg);
+        .research-item h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
-        .job-title {
-            color: var(--accent-color);
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .company-info {
-            color: var(--text-muted);
+        .research-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        .achievements {
-            list-style: none;
+        .research-conference {
+            color: var(--bright-blue);
+            font-weight: 500;
         }
 
-        .achievements li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
+        .research-authors {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-        .achievements li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
+        .research-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .research-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .research-link:hover {
+            text-decoration: underline;
         }
 
         /* Contact Section */
@@ -333,46 +360,40 @@
         }
 
         .contact-item {
-            background: var(--card-bg);
+            background: var(--glass-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            background: var(--hover-bg);
+            transform: translateY(-2px);
         }
 
         .contact-item i {
             font-size: 2rem;
-            color: var(--accent-color);
+            color: var(--accent-blue);
             margin-bottom: 1rem;
         }
 
+        .contact-item h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
         .contact-item a {
-            color: var(--text-light);
+            color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-item a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Animations */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            color: var(--accent-blue);
         }
 
         /* Responsive Design */
@@ -381,241 +402,384 @@
                 display: none;
             }
 
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-content h2 {
-                font-size: 1.2rem;
+            .hero-emojis {
+                font-size: 1.5rem;
             }
 
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                justify-self: center;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            .timeline-item {
-                margin-left: 1rem;
+            .container {
+                padding: 0 1rem;
             }
 
-            .timeline-item::before {
-                left: -2rem;
+            section {
+                padding: 3rem 0;
             }
         }
 
-        /* Scroll reveal animation */
-        .reveal {
+        /* Smooth animations */
+        .fade-in {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(30px);
             transition: all 0.6s ease;
         }
 
-        .reveal.active {
+        .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="bg-animation">
-        <div class="particle" style="left: 10%; top: 20%; width: 4px; height: 4px; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 20%; top: 80%; width: 6px; height: 6px; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 60%; top: 30%; width: 8px; height: 8px; animation-delay: 4s;"></div>
-        <div class="particle" style="left: 80%; top: 70%; width: 5px; height: 5px; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 90%; top: 10%; width: 7px; height: 7px; animation-delay: 3s;"></div>
-    </div>
-
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="logo">Sajal Jain</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#research">Research</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Sajal Jain</h1>
-            <h2>Lead Data Scientist & AI Engineer</h2>
-            <p>Transforming data into intelligent solutions with cutting-edge AI, ML, and GenAI technologies. Specialized in RAG systems, LLMs, and scalable MLOps platforms.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#experience" class="btn btn-secondary">View Experience</a>
-            </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Hi, I'm Sajal</h1>
+            <div class="hero-emojis">💻 🤖 ☕️ 🧠 ❤️</div>
+            <p class="hero-subtitle">Lead Data Scientist | AI Engineering | Generative AI | MLOps</p>
+            <a href="#contact" class="cta-button">Contact</a>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="reveal">
-        <h2 class="section-title">Technical Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3><i class="fas fa-robot"></i> Generative AI & LLMs</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">LLMs</span>
-                    <span class="skill-tag">RAG</span>
-                    <span class="skill-tag">Transformers</span>
-                    <span class="skill-tag">AI Agents</span>
-                    <span class="skill-tag">LLaMA</span>
-                    <span class="skill-tag">GPT</span>
-                    <span class="skill-tag">Mistral</span>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About</h2>
+            <p class="section-subtitle">My Introduction</p>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <p>With 4+ years of experience in AI and Data Science, I design, develop, and deploy cutting-edge AI solutions, specializing in GenAI, RAG systems, and scalable MLOps platforms. I've led cross-functional teams, translating business goals into actionable Data & AI strategies that deliver measurable results.</p>
+                    <br>
+                    <p>Skilled in Python, advanced ML frameworks, and cloud technologies, I build high-performance, scalable systems that drive innovation. From developing provider search features handling 1M+ records to creating AI-driven summarizers that reduce manual analysis time by 40%, I'm passionate about transforming complex data into intelligent solutions.</p>
+                    <br>
+                    <p>If you're looking for someone to drive impactful AI projects, let's connect!</p>
                 </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-code"></i> Programming & Frameworks</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">TensorFlow</span>
-                    <span class="skill-tag">PyTorch</span>
-                    <span class="skill-tag">LangChain</span>
-                    <span class="skill-tag">LlamaIndex</span>
-                    <span class="skill-tag">Hugging Face</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">AWS</span>
-                    <span class="skill-tag">Websocket</span>
-                    <span class="skill-tag">OpenSearch</span>
-                    <span class="skill-tag">Lambda</span>
-                    <span class="skill-tag">Bedrock</span>
-                    <span class="skill-tag">S3</span>
-                    <span class="skill-tag">Docker</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-database"></i> Data & ML</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">NLP</span>
-                    <span class="skill-tag">Deep Learning</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">ChromaDB</span>
-                    <span class="skill-tag">FAISS</span>
-                    <span class="skill-tag">Weaviate</span>
+                <div class="about-image fade-in">
+                    👨‍💻
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="reveal">
-        <h2 class="section-title">Professional Journey</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="job-title">Lead Data Scientist</div>
-                <div class="company-info">UST, Pune • Feb 2024 – Present</div>
-                <ul class="achievements">
-                    <li>Developed provider search feature using RAG on AWS for 1M+ records, improving retrieval accuracy by 30%</li>
-                    <li>Built AI-driven summarizer using recursive summarization, reducing manual analysis time by 40%</li>
-                    <li>Created Multi-Document Q&A chatbot with LangChain, improving efficiency by 2x through parallel processing</li>
-                </ul>
-            </div>
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <p class="section-subtitle">My journey in the professional front</p>
+            <div class="timeline">
+                <!-- Professional Experience -->
+                <div class="timeline-section fade-in">
+                    <h3>Professional Experience</h3>
+                    <div class="timeline-items">
+                        <div class="timeline-item">
+                            <h4>Lead Data Scientist</h4>
+                            <div class="company">UST</div>
+                            <div class="duration">Feb 2024 – Present</div>
+                            <div class="description">
+                                Leading AI initiatives with focus on RAG systems and GenAI applications. Developed provider search feature using RAG on AWS for 1M+ records, improving retrieval accuracy by 30%. Built AI-driven summarizer using recursive summarization, reducing manual analysis time by 40%. Created Multi-Document Q&A chatbot with LangChain, improving efficiency by 2x through parallel processing.
+                            </div>
+                        </div>
 
-            <div class="timeline-item">
-                <div class="job-title">Data Scientist 2</div>
-                <div class="company-info">UST, Pune • July 2023 – Jan 2024</div>
-                <ul class="achievements">
-                    <li>Generated marketing content using prompt engineering, increasing engagement (CTR) by 20%</li>
-                    <li>Applied advanced RAG techniques to process 500+ PDF documents, improving retrieval accuracy by 30%</li>
-                    <li>Implemented real-time streaming with Multi-GPU architecture, cutting response latency by 40%</li>
-                    <li>Optimized data pipelines using AI tools and multi-agent systems, improving accuracy by 25%</li>
-                </ul>
-            </div>
+                        <div class="timeline-item">
+                            <h4>Data Scientist 2</h4>
+                            <div class="company">UST</div>
+                            <div class="duration">July 2023 – Jan 2024</div>
+                            <div class="description">
+                                Specialized in advanced RAG techniques and real-time AI systems. Generated marketing content using prompt engineering, increasing engagement (CTR) by 20%. Applied RAG techniques to process 500+ PDF documents, improving retrieval accuracy by 30%. Implemented real-time streaming with Multi-GPU architecture, cutting response latency by 40%.
+                            </div>
+                        </div>
 
-            <div class="timeline-item">
-                <div class="job-title">Data Scientist</div>
-                <div class="company-info">UST Abzooba, Pune • June 2021 – June 2023</div>
-                <ul class="achievements">
-                    <li>Developed predictive models for disease propensity using APCD Colorado dataset (1B+ records)</li>
-                    <li>Enhanced HealthOne.ai MLOps platform, improving data processing efficiency by 3x</li>
-                    <li>Implemented multi-tenancy, reducing AI solution time-to-market by 50%</li>
-                    <li>Engineered reusable components, increasing model accuracy by 25% and reducing processing time by 40%</li>
-                </ul>
-            </div>
+                        <div class="timeline-item">
+                            <h4>Data Scientist</h4>
+                            <div class="company">UST Abzooba</div>
+                            <div class="duration">June 2021 – June 2023</div>
+                            <div class="description">
+                                Developed predictive models for healthcare using large-scale datasets. Enhanced HealthOne.ai MLOps platform, improving data processing efficiency by 3x. Implemented multi-tenancy architecture, reducing AI solution time-to-market by 50%. Engineered reusable components, increasing model accuracy by 25% and reducing processing time by 40%.
+                            </div>
+                        </div>
 
-            <div class="timeline-item">
-                <div class="job-title">Project Intern</div>
-                <div class="company-info">HungreeBee LLP, Pune • Dec 2020 – June 2021</div>
-                <ul class="achievements">
-                    <li>Developed Farmer's Market app using Flutter and Firebase, tested by 20+ farmers</li>
-                    <li>Analyzed 70 years of agricultural data across 10+ crops for trend insights</li>
-                    <li>Co-authored research paper on predictive analytics, published by Springer at ICSAC 2021</li>
-                </ul>
+                        <div class="timeline-item">
+                            <h4>Project Intern</h4>
+                            <div class="company">HungreeBee LLP</div>
+                            <div class="duration">Dec 2020 – June 2021</div>
+                            <div class="description">
+                                Developed Farmer's Market app using Flutter and Firebase, field-tested by 20+ farmers. Analyzed 70 years of agricultural data across 10+ crops for trend insights. Co-authored research paper on predictive analytics for agriculture supply chain management, published by Springer at ICSAC 2021.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="timeline-section fade-in">
+                    <h3>Education</h3>
+                    <div class="timeline-items">
+                        <div class="timeline-item">
+                            <h4>B.Tech - Computer Science</h4>
+                            <div class="company">MIT Pune, India</div>
+                            <div class="duration">CGPA: 9.35/10</div>
+                            <div class="description">
+                                Graduated with distinction, demonstrating strong academic performance and technical excellence in computer science fundamentals, data structures, algorithms, and machine learning.
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="reveal">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline-item" style="margin-left: 0;">
-            <div class="job-title">B.Tech in Computer Science</div>
-            <div class="company-info">MIT Pune, India • CGPA: 9.35/10</div>
-            <p style="margin-top: 1rem;">Graduated with distinction, demonstrating strong academic performance and technical excellence in computer science fundamentals.</p>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <p class="section-subtitle">My technical & professional skills</p>
+            <div class="skills-grid">
+                <div class="skill-category fade-in">
+                    <h3>Generative AI & LLMs</h3>
+                    <p class="skill-experience">4+ Years XP</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">LLMs & Transformers</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">RAG Systems</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">AI Agents</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">LLaMA, GPT, Mistral</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Prompt Engineering</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Programming</h3>
+                    <p class="skill-experience">4+ Years XP</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Linux</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>ML & Frameworks</h3>
+                    <p class="skill-experience">4+ Years XP</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">TensorFlow</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PyTorch</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">LangChain</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">LlamaIndex</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Hugging Face</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Cloud & Databases</h3>
+                    <p class="skill-experience">4+ Years XP</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">MongoDB</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PostgreSQL</span>
+                            <span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">ChromaDB</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">FAISS, Weaviate</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>MLOps & Deployment</h3>
+                    <p class="skill-experience">2+ Years XP</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Model Development</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Model Deployment</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-level">80%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">CI/CD</span>
+                            <span class="skill-level">75%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>Data Science & ML</h3>
+                    <p class="skill-experience">4+ Years XP</p>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">NLP</span>
+                            <span class="skill-level">95%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Deep Learning</span>
+                            <span class="skill-level">90%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Data Engineering</span>
+                            <span class="skill-level">85%</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">A/B Testing</span>
+                            <span class="skill-level">80%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <h2 class="section-title">Research</h2>
+            <p class="section-subtitle">My research publications & contributions</p>
+            <div class="research-grid">
+                <div class="research-item fade-in">
+                    <h3>Predictive Analytics for Agriculture Supply Chain Management</h3>
+                    <div class="research-meta">
+                        <span class="research-conference">ICSAC 2021, Springer</span>
+                        <span class="research-authors">Co-authored</span>
+                    </div>
+                    <p class="research-description">
+                        A comprehensive study on applying predictive analytics to optimize agriculture supply chain management, analyzing 70 years of agricultural data across 10+ crops to uncover yield, production, and population trends for policy and supply chain optimization.
+                    </p>
+                </div>
+
+                <div class="research-item fade-in">
+                    <h3>Machine Translation System using RNN and LSTM</h3>
+                    <div class="research-meta">
+                        <span class="research-conference">Canspirit AI Research Project</span>
+                        <span class="research-authors">Primary Author</span>
+                    </div>
+                    <p class="research-description">
+                        Developed an advanced Machine Translation system leveraging RNN and LSTM models to enhance translation accuracy by 94%. The research focused on improving neural machine translation architectures for better language understanding and generation.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="reveal">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-grid">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <h3>Email</h3>
-                <a href="mailto:sajalj4598@gmail.com">sajalj4598@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <h3>Phone</h3>
-                <a href="tel:+917999123588">+91 7999123588</a>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-linkedin"></i>
-                <h3>LinkedIn</h3>
-                <a href="https://linkedin.com/in/sajal-jain" target="_blank">Connect with me</a>
-            </div>
-            <div class="contact-item">
-                <i class="fab fa-github"></i>
-                <h3>GitHub</h3>
-                <a href="https://github.com/sajalj4598" target="_blank">View my code</a>
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Get in touch with me</p>
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Pune, Maharashtra, India</p>
+                </div>
+                
+                <div class="contact-item fade-in">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:sajalj4598@gmail.com">sajalj4598@gmail.com</a>
+                </div>
+                
+                <div class="contact-item fade-in">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <a href="tel:+917999123588">+91 7999123588</a>
+                </div>
+                
+                <div class="contact-item fade-in">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/sajal-jain" target="_blank">Connect with me</a>
+                </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Scroll reveal animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            for (let i = 0; i < reveals.length; i++) {
-                const windowHeight = window.innerHeight;
-                const elementTop = reveals[i].getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-
-        window.addEventListener('scroll', reveal);
-        reveal(); // Check on page load
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -630,34 +794,32 @@
             });
         });
 
-        // Dynamic particle generation
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.top = Math.random() * 100 + '%';
-            particle.style.width = (Math.random() * 8 + 2) + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.animationDelay = Math.random() * 6 + 's';
-            particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
-            
-            document.querySelector('.bg-animation').appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 8000);
-        }
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // Create particles periodically
-        setInterval(createParticle, 3000);
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
 
-        // Add navbar scroll effect
+        // Observe all elements with fade-in class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar background change on scroll
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.background = 'rgba(10, 10, 10, 0.95)';
+                nav.style.background = 'rgba(10, 25, 41, 0.98)';
             } else {
-                nav.style.background = 'rgba(10, 10, 10, 0.9)';
+                nav.style.background = 'rgba(10, 25, 41, 0.95)';
             }
         });
     </script>
